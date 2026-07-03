@@ -9,11 +9,32 @@ dotenv.config();
 
 const app = express();
 const PORT = Number(process.env.PORT || 5001);
-const HOST = process.env.HOST || "127.0.0.1";
 const HOLD_TTL_MS = 5 * 60 * 1000;
-
+const HOST =
+  process.env.NODE_ENV === "production"
+    ? "0.0.0.0"
+    : (process.env.HOST || "127.0.0.1");
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173" }));
+
+const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
+  .split(",")
+  .map(origin => origin.trim());
+
+app.use(
+  cors({
+    origin(origin, callback) {
+      // Allow requests without an Origin (Postman, curl, server-to-server)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`CORS blocked: ${origin}`));
+    },
+    credentials: true,
+  })
+);
 
 // Connect to MongoDB & Auto-Seed if Empty
 mongoose.connect(process.env.MONGO_URI)
