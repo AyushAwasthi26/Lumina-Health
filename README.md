@@ -1,153 +1,361 @@
-# Healthcare Appointment Manager
+<img width="1092" height="282" alt="Screenshot 2026-07-03 232525" src="https://github.com/user-attachments/assets/a33d7717-ba3a-4f4e-828a-171801dbfa33" />
+# 🏥 Lumina Health — AI-Powered Smart Healthcare Appointment Management
 
-React + Tailwind frontend with a Node.js + Express backend for patient booking, doctor visit summaries, admin doctor management, leave conflict handling, notification queueing, and Google Calendar integration stubs.
+<div align="center">
 
-## Tech Stack
 
-- Frontend: React 19, Vite, Tailwind CSS, lucide-react
-- Backend: Node.js, Express
-- Current persistence: in-memory demo store in `server/index.js`
-- Planned production persistence: PostgreSQL or MongoDB with the schema below
+### Intelligent Appointment Scheduling with AI Triage, JWT Authentication & Google Calendar Integration
 
-## Setup
+*Built for modern healthcare using AI, secure authentication and intelligent scheduling.*
+
+![React](...)
+![Node.js](...)
+![Express](...)
+![MongoDB](...)
+![Gemini AI](...)
+![JWT](...)
+![Google Calendar](...)
+![Vite](...)
+
+</div>
+
+---
+
+Lumina Health is a full-stack AI-powered healthcare appointment management platform that streamlines the complete appointment lifecycle.
+
+Patients can securely register, log in, describe their symptoms, receive AI-generated urgency analysis, schedule appointments with available doctors, and automatically sync appointments with Google Calendar.
+
+Doctors receive organized patient queues with AI-generated visit summaries, while administrators manage doctors, schedules, leave requests, and appointments from a centralized dashboard.
+
+---
+
+# 📋 Table of Contents
+
+- 📸 Screenshots
+- 🌟 About the Project
+- ✨ Features
+- 🚀 Getting Started
+- ⚙️ Environment Variables
+- 📂 Folder Structure
+- 📡 API Documentation
+- 🗄 Database Schema
+- 🤖 AI Prompt Engineering
+- 📅 Google Calendar Integration
+- 💻 Tech Stack
+- 🔐 Authentication
+- 👥 Project Team
+- 📜 License
+
+---
+
+## 📸 Screenshots
+
+<img width="1920" height="1080" alt="Screenshot 2026-07-04 030107" src="https://github.com/user-attachments/assets/e67f1e87-a5a4-47bd-b3da-24cc769772bc" />
+<img width="1920" height="1080" alt="Screenshot 2026-07-04 030117" src="https://github.com/user-attachments/assets/2ca6dc11-d19c-40cf-b784-c43469b2992f" />
+<img width="1918" height="1077" alt="Screenshot 2026-07-04 030359" src="https://github.com/user-attachments/assets/52a08cdb-59c6-4f84-9878-e436dd077924" />
+<img width="1140" height="1025" alt="Screenshot 2026-07-04 030415" src="https://github.com/user-attachments/assets/f92814ce-ce0b-4cd0-a596-53be8e664085" />
+<img width="1895" height="1078" alt="Screenshot 2026-07-04 030522" src="https://github.com/user-attachments/assets/b9abdd05-5b5f-4fc4-aef3-f947f3efa0c9" />
+<img width="1026" height="1078" alt="Screenshot 2026-07-04 030540" src="https://github.com/user-attachments/assets/00e8dc48-3d65-4090-bb04-e09d48576d3a" />
+<img width="1896" height="1078" alt="Screenshot 2026-07-04 030739" src="https://github.com/user-attachments/assets/74755394-b04e-4de0-8703-e410941e3efb" />
+<img width="696" height="696" alt="Screenshot 2026-07-04 030801" src="https://github.com/user-attachments/assets/67b3bb09-d45e-47c3-85d3-32d3bcdc57c5" />
+<img width="1627" height="731" alt="Screenshot 2026-07-04 030852" src="https://github.com/user-attachments/assets/1f571833-9199-4326-abec-e5b1f88953e5" />
+
+
+
+---
+
+# 🚀 Getting Started
+
+## 1. Clone Repository
+
+```bash
+git clone https://github.com/AyushAwasthi26/Lumina-Health.git
+```
+
+---
+
+## 2. Open Project
+
+```bash
+cd Lumina-Health
+```
+
+---
+
+## 3. Install Dependencies
 
 ```bash
 npm install
-cp .env.example .env
+```
+
+---
+
+## 4. Configure Environment Variables
+
+Create a `.env` file in the project root.
+
+Copy all values from `.env.example`.
+
+Example:
+
+```env
+PORT=5001
+
+HOST=127.0.0.1
+
+CLIENT_ORIGIN=http://localhost:5173
+
+MONGO_URI=your_mongodb_uri
+
+JWT_SECRET=your_secret
+
+GEMINI_API_KEY=your_key
+
+GOOGLE_CLIENT_ID=your_client_id
+
+GOOGLE_CLIENT_SECRET=your_secret
+
+GOOGLE_REDIRECT_URI=http://localhost:5001/api/auth/google/callback
+```
+
+---
+
+## 5. Start Backend
+
+```bash
+node server/index.js
+```
+
+or
+
+```bash
 npm run server
 ```
 
-In another terminal:
+Backend runs on
+
+```
+http://localhost:5001
+```
+
+---
+
+## 6. Start Frontend
+
+Open another terminal.
 
 ```bash
 npm run dev
 ```
 
-Frontend: `http://localhost:5173`
-Backend: `http://localhost:5001`
+Frontend runs on
 
-## Environment
+```
+http://localhost:5173
+```
 
-```bash
-PORT=5001
-HOST=127.0.0.1
-CLIENT_ORIGIN=http://localhost:5173
-OPENAI_API_KEY=
-SENDGRID_API_KEY=
+---
+
+## 7. Open Browser
+
+Visit
+
+```
+http://localhost:5173
+```
+
+🎉 Lumina Health is now running locally.
+
+---
+
+# 🌟 About the Project
+
+(write your About section)
+
+---
+
+# ✨ Features
+
+(your features)
+
+---
+
+# ⚙️ Environment Variables
+
+Explain each variable in a table.
+
+| Variable | Purpose |
+|-----------|----------|
+| MONGO_URI | MongoDB Atlas Connection |
+| JWT_SECRET | JWT Signing Secret |
+| CLIENT_ORIGIN | Allowed Frontend Origin |
+| GEMINI_API_KEY | Google Gemini API |
+| GOOGLE_CLIENT_ID | OAuth Client |
+| GOOGLE_CLIENT_SECRET | OAuth Secret |
+| GOOGLE_REDIRECT_URI | OAuth Callback |
+
+---
+
+# 📂 Folder Structure
+
+(your project tree)
+
+---
+
+# 📡 API Documentation
+
+Patients
+
+Doctors
+
+Appointments
+
+Authentication
+
+Notifications
+
+---
+
+# 🗄 Database Schema
+
+Users
+
+Doctors
+
+Appointments
+
+---
+
+# 🤖 AI Prompt Engineering
+
+Instead of exposing your exact prompts, write something like:
+
+### Prompt 1 — Medical Urgency Classification
+
+Purpose:
+
+Determines urgency level from patient symptoms.
+
+Expected Output
+
+- Low
+- Medium
+- High
+
+---
+
+### Prompt 2 — Visit Summary Generation
+
+Purpose
+
+Creates concise doctor-facing clinical notes from patient information.
+
+---
+
+### Prompt 3 — Prescription Explanation
+
+Purpose
+
+Converts medical prescriptions into patient-friendly language.
+
+---
+
+### Prompt 4 — Follow-up Recommendation
+
+Purpose
+
+Suggests appropriate follow-up schedules based on diagnosis.
+
+---
+
+### Prompt 5 — Appointment Prioritization
+
+Purpose
+
+Ranks appointments using symptom severity and urgency.
+
+---
+
+### Prompt 6 — Clinical Note Formatting
+
+Purpose
+
+Transforms structured medical data into standardized clinical documentation.
+
+---
+
+# 📅 Google Calendar Integration
+
+1. Create Google Cloud Project
+
+2. Enable Calendar API
+
+3. Configure OAuth Consent Screen
+
+4. Generate OAuth Credentials
+
+5. Add Redirect URI
+
+```
+http://localhost:5001/api/auth/google/callback
+```
+
+6. Update `.env`
+
+```
 GOOGLE_CLIENT_ID=
+
 GOOGLE_CLIENT_SECRET=
-GOOGLE_REDIRECT_URI=http://localhost:5001/api/google/callback
+
+GOOGLE_REDIRECT_URI=
 ```
 
-The demo runs without API keys. Missing LLM keys are handled with local fallback summaries so appointment booking never breaks.
+---
 
-## API Docs
+# 💻 Tech Stack
 
-### Health and Auth
+Frontend
 
-- `GET /api/health`
-- `POST /api/auth/login`
-  - Body: `{ "role": "patient", "name": "Demo User", "email": "demo@clinic.test" }`
+Backend
 
-### Doctors
+Database
 
-- `GET /api/doctors?specialization=cardiology`
-- `POST /api/doctors`
-  - Body: `{ "name": "...", "specialization": "...", "email": "...", "workingHours": { "start": "09:00", "end": "16:00" }, "slotDuration": 30 }`
-- `PATCH /api/doctors/:id/leave`
-  - Body: `{ "date": "2026-07-08" }`
-  - Marks the doctor unavailable, flags existing bookings for reschedule, and queues patient notifications.
+Authentication
 
-### Slots and Appointments
+AI
 
-- `GET /api/slots?doctorId=doc-101&date=2026-07-08`
-- `POST /api/holds`
-  - Body: `{ "doctorId": "doc-101", "date": "2026-07-08", "time": "10:30", "patientEmail": "patient@example.com" }`
-- `GET /api/appointments?doctorId=doc-101`
-- `GET /api/appointments?patientEmail=patient@example.com`
-- `POST /api/appointments`
-  - Body: `{ "doctorId": "...", "patientName": "...", "patientEmail": "...", "date": "...", "time": "...", "symptoms": "..." }`
-- `PATCH /api/appointments/:id/cancel`
-- `PATCH /api/appointments/:id/visit`
-  - Body: `{ "notes": "...", "prescription": "Paracetamol 500mg twice daily for 3 days" }`
+Deployment
 
-### Notifications and Calendar
+---
 
-- `GET /api/notifications`
-- `GET /api/calendar-events`
+# 🔐 Authentication
 
-## Database Schema
+- JWT Authentication
+- Password Hashing (bcrypt)
+- Protected Routes
+- Role Based Access Control
+- Patient
+- Doctor
+- Admin
 
-### users
+---
 
-`id`, `name`, `email`, `password_hash`, `role`, `created_at`
+# 👥 Project Team
 
-### doctors
+**Ayush Awasthi**
 
-`id`, `user_id`, `name`, `specialization`, `email`, `working_start`, `working_end`, `slot_duration`, `created_at`
+Full Stack Developer
 
-### doctor_leave_days
+Designed and developed the complete platform including frontend, backend, AI integration, JWT authentication, appointment engine, and Google Calendar integration.
 
-`id`, `doctor_id`, `date`, `reason`, `created_at`
+---
 
-### slot_holds
+# 📜 License
 
-`id`, `doctor_id`, `patient_id`, `date`, `time`, `expires_at`, `created_at`
+MIT License
 
-Add a unique index on `(doctor_id, date, time)` for active holds.
+See LICENSE for more details.
 
-### appointments
+---
 
-`id`, `doctor_id`, `patient_id`, `date`, `time`, `status`, `symptoms`, `pre_visit_summary_json`, `post_visit_summary_json`, `prescription`, `calendar_event_id`, `created_at`, `updated_at`
-
-Add a unique index on `(doctor_id, date, time)` where `status in ('confirmed', 'completed')`.
-
-### notifications
-
-`id`, `appointment_id`, `type`, `channel`, `recipient`, `status`, `attempts`, `last_error`, `next_retry_at`, `created_at`
-
-### calendar_events
-
-`id`, `appointment_id`, `provider`, `external_event_id`, `status`, `attendees_json`, `created_at`, `updated_at`
-
-## LLM Prompts
-
-Pre-visit summary:
-
-```text
-Analyse these symptoms and return: urgency level (Low / Medium / High), chief complaint, and three suggested questions for the doctor. Symptoms: <symptoms>
-```
-
-Post-visit summary:
-
-```text
-Convert these clinical notes into a patient-friendly summary with medication schedule and follow-up steps: <notes>
-```
-
-Expected output is stored as JSON on the appointment record. If the LLM call fails, the backend stores a fallback summary and marks it with `fallback: true`.
-
-## Google Calendar Setup
-
-1. Create a Google Cloud project.
-2. Enable the Google Calendar API.
-3. Configure OAuth consent screen for external or internal users.
-4. Create OAuth 2.0 client credentials.
-5. Add `GOOGLE_REDIRECT_URI` to the OAuth redirect list.
-6. Store `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in `.env`.
-7. On booking, create one event with patient and doctor attendees.
-8. On reschedule, update event start/end times.
-9. On cancellation or doctor leave conflict, delete or mark the event cancelled.
-
-## System Design
-
-The application separates patient, doctor, and admin workflows while keeping appointment integrity centralized in the backend. Patients search doctors by specialization, request a short-lived slot hold, submit symptoms, and then confirm the booking. Doctors receive the generated pre-visit summary with urgency, chief complaint, and suggested questions. After a visit, doctors submit notes and prescription details, and the backend generates a patient-friendly summary plus medication reminder notifications. Admins manage doctor profiles, working hours, slot duration, and leave days.
-
-Double booking is prevented with two layers. First, the slot listing excludes confirmed appointments, active holds, and doctor leave days. Second, the booking endpoint performs the availability check again immediately before inserting the appointment. In production this should run inside a database transaction with a unique partial index on `(doctor_id, date, time)` for active bookings. If two requests arrive at the same time, only the first transaction commits; the second receives a conflict response and the UI reloads slots.
-
-The slot hold mechanism reduces race conditions while a patient is completing the symptom form. Holds expire after five minutes and are removed before every slot or booking check. A hold only allows the same patient email to finish the booking; another patient sees the slot as held. Production storage should keep `expires_at` indexed and clean expired rows with a scheduled job.
-
-Doctor leave handling runs through the admin endpoint. When a leave date is added, the backend finds confirmed appointments for that doctor on that date, marks them as `reschedule_required`, queues patient emails, and marks calendar events for update or cancellation. This keeps historical records intact while making the conflict visible to staff and patients.
-
-Notifications are recorded before external delivery. Email, medication reminders, and calendar work should be processed by a background worker with retry metadata: attempts, last error, and next retry time. Failed SendGrid, Mailgun, Nodemailer, or Google Calendar calls should not roll back a confirmed appointment after the booking transaction succeeds. Instead, they remain queued for retry and visible to admins.
-
-LLM integration is treated as helpful but non-critical. The backend uses deterministic fallback summaries when the model or API key is unavailable. That means patients can still book and doctors still receive a basic summary instead of an error page. In production, LLM responses should be validated against a JSON schema before storage.
+Made with ❤️ using React, Node.js, MongoDB & Google Gemini.
