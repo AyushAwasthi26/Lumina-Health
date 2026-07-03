@@ -16,22 +16,9 @@ const HOST =
     : (process.env.HOST || "127.0.0.1");
 app.use(express.json());
 
-const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173")
-  .split(",")
-  .map(origin => origin.trim());
-
 app.use(
   cors({
-    origin(origin, callback) {
-      // Allow requests without an Origin (Postman, curl, server-to-server)
-      if (!origin) return callback(null, true);
-
-      if (allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(new Error(`CORS blocked: ${origin}`));
-    },
+    origin: true,
     credentials: true,
   })
 );
